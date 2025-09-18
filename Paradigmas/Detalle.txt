@@ -1,0 +1,82 @@
+
+CONCEPTOS DE PROGRAMACIÓN ORIENTADA A OBJETOS
+Proyecto: Actividad 6/2 corte - Turismo1. MÉTODO CONSTRUCTOR
+  
+ - Definido en todas las clases para inicializar atributos.
+   - Ejemplo: Actividad.java, línea 9
+     public Actividad(String nombre, String guia, int fecha, double precio, String codigo) { ... }
+
+2. MÉTODOS DE ACCESO (GETTERS y SETTERS)
+   - Permiten acceder y modificar atributos privados.
+   - Ejemplo: Actividad.java, línea 19
+     public String getNombre() { return nombre; }
+
+3. MÉTODO toString()
+   - Sobrescrito para mostrar el objeto como texto.
+   - Ejemplo: Cliente.java, línea 20
+     @Override
+     public String toString() { ... }
+
+4. MODIFICADOR static
+   - Atributo compartido entre todas las instancias.
+   - Ejemplo: Elemento.java, línea 8
+     private static int contadorObjetos = 0;
+
+5. MODIFICADOR final
+   - Atributo que no se puede cambiar y método que no se puede sobrescribir.
+   - Ejemplo: Elemento.java, línea 5
+     public final String INSTITUCION = "Politécnico";
+   - Ejemplo: Elemento.java, línea 14
+     public final void infoFinal() { ... }
+
+6. VISIBILIDADES
+   - Controlan el acceso a los atributos y métodos.
+   - Ejemplo: Cliente.java, línea 5 (atributos privados)
+     private String id;
+   - Ejemplo: Elemento.java, línea 5 (atributo público)
+     public final String INSTITUCION = "Politécnico";
+
+7. MULTIPLICIDADES
+   - Una clase puede contener varios objetos de otra clase.
+   - Ejemplo: ActividadTuristica.java, línea 13
+     private List<Actividad> actividades;
+
+8. SOBRESCRITURA DE MÉTODOS
+   - Las subclases redefinen el método descripcion().
+   - Ejemplo: Actividad.java, línea 32
+     @Override
+     public String descripcion() { ... }
+
+9. SOBRECARGA DE MÉTODOS
+   - Mismo método con diferentes parámetros.
+   - Ejemplo: Actividad.java, línea 25
+     public void setPrecio(double precio) { ... }
+     public void setPrecio(double precio, double descuento) { ... }
+
+10. CREACIÓN DE OBJETOS
+    - Uso del operador new para instanciar clases.
+    - Ejemplo: Turismo.java, línea 9
+      elementos[0] = new Actividad("Tour histórico", "Juan", 20240821, 150.0, "A001");
+
+11. AGREGACIONES
+    - Una clase contiene referencias a otras (composición).
+    - Ejemplo: ActividadTuristica.java, línea 17
+      this.destino = destino;
+      this.cliente = cliente;
+
+12. HERENCIA
+    - Las clases derivadas heredan de la superclase Elemento.
+    - Ejemplo: Actividad.java, línea 3
+      public class Actividad extends Elemento { ... }
+
+13. POLIMORFISMO
+    - Uso de referencias de la superclase para objetos de subclases.
+    - Ejemplo: Turismo.java, línea 6
+      Elemento[] elementos = new Elemento[5];
+    - Ejemplo: Turismo.java, línea 38
+      mostrarDescripcion(new Actividad(...));
+      mostrarDescripcion(new Destino(...));
+
+
+Repositorio en Github:
+https://github.com/manumorales-lab/Paradigmas-proyecto-.git
